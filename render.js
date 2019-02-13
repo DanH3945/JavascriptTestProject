@@ -15,6 +15,12 @@ window.onload = function() {
 
         context.clearRect(-transX, -transY, width, height);
 
+        var part = particle.create(0, 0, 100, 5, 30);
+        part.update(context); // Why does this function call cause the entire process to fail to draw?
+
+        context.beginPath();
+        context.arc(0, 0, 100, 0, Math.PI * 2, false);
+        context.fill();
 
 
         requestAnimationFrame(render);

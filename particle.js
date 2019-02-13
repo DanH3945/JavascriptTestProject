@@ -12,10 +12,10 @@ var particle = {
         obj.velocity.setAngle(direction);
     },
 
-    update: function (context) {
+    update: function(context) {
         this.position.addTo(this.velocity);
         context.beginPath();
-        context.arc(this.position.getX(), this.position.getY(), this.radius, 0, Math.PI * 2, false );
+        context.arc(this.position.getX(), this.position.getY(), this.radius, 0, Math.PI * 2, false);
         context.fill();
-    },
+    }
 };
