@@ -9,19 +9,19 @@ window.onload = function() {
     context.translate(transX, transY);
     context.scale(1, -1);
 
+    var part = particle.create(0, 0, 100, 0, 30);
+
     render();
 
     function render() {
 
         context.clearRect(-transX, -transY, width, height);
 
-        var part = particle.create(0, 0, 100, 5, 30);
-        part.update(context); // Why does this function call cause the entire process to fail to draw?
-
         context.beginPath();
-        context.arc(0, 0, 100, 0, Math.PI * 2, false);
+        context.arc(part.position.getX(), part.position.getY(), part.radius, 0, Math.PI * 2, false);
         context.fill();
 
+        part.update();
 
         requestAnimationFrame(render);
     }
